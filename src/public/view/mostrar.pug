@@ -1,0 +1,36 @@
+doctype
+html(lang = 'es')
+  head
+    meta(charset='UTF-8')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css')
+    title Mantenedor de usuarios
+  body
+    header
+      include includes/navbar.pug
+  div.container.mt-4
+    div.container-fluid
+      if(success)
+          div(role="alert").alert.alert-success.alert-dismissible.fade.show
+            span=success
+            button(type="button" data-dismiss="alert" aria-label="Close").close
+              span(aria-hidden="true") &times;   
+      div.card
+        div.card-header Mostrar usuarios
+        div.card-body  
+          table.table
+            thead
+              tr
+                th Id
+                th Nombre
+                th Apellidos
+                th Email 
+                th Password
+            tbody
+              each usuario, index in usuarios
+                tr              
+                  td= usuario.id
+                  td= usuario.nombre
+                  td= usuario.apellidos
+                  td= usuario.email
+                  td= usuario.password
+    include includes/script.pug

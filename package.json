@@ -1,0 +1,25 @@
+{
+  "name": "Mantenedor-de-usuarios",
+  "version": "1.0.0",
+  "description": "Aplicacion de mantenedores de usuarios",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "Victor Nuñez",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.2.1",
+    "email-validator": "^2.0.4",
+    "express": "^4.16.4",
+    "jquery": "^3.3.1",
+    "mysql": "^2.16.0",
+    "popper.js": "^1.14.6",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}

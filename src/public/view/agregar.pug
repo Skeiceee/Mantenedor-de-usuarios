@@ -1,0 +1,34 @@
+doctype
+html(lang = 'es')
+  head
+    meta(charset='UTF-8')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css')
+    title Mantenedor de usuarios
+  body
+    header
+      include includes/navbar.pug
+  div.container.mt-4
+    div.container-fluid
+    if(errors)
+      each error, index in errors
+        div(role="alert").alert.alert-danger.alert-dismissible.fade.show
+          span=error
+          button(type="button" data-dismiss="alert" aria-label="Close").close
+            span(aria-hidden="true") &times;
+    div.card
+      div.card-header Agregar usuario
+      div.card-body  
+        form(action="/agregar" method="post").form-group
+          label(for="nombre") Nombre
+          input(name="nombre")#nombre.form-control
+          label(for="apellidos") Apellidos
+          input(name="apellidos")#apellidos.form-control
+          label(for="email") Correo electronico
+          input(name="email")#email.form-control
+          label(for="password") Constraseña
+          input(type="password" name="password")#password.form-control
+          label(for="passwordConfirm") Confirmar constraseña
+          input(type="password" name="passwordConfirm")#passwordConfirm.form-control 
+          div.mt-3
+            button(type="submit").btn.btn-primary.btn-block Enviar
+    include includes/script.pug
